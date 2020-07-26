@@ -2,11 +2,11 @@
   <v-container>
     <v-row>
       <v-col class="col-8">
-        <v-btn @click="startTimer(0.1)">0</v-btn>
-        <v-btn @click="startTimer(5)">5</v-btn>
-        <v-btn @click="startTimer(10)">10</v-btn>
-        <v-btn @click="startTimer(15)">15</v-btn>
-        <v-btn @click="startTimer(25)">25</v-btn>
+        <v-btn class="blue darken-2" @click="startTimer(0.1)">0</v-btn>
+        <v-btn class="blue darken-2" @click="startTimer(5)">5</v-btn>
+        <v-btn class="blue darken-2" @click="startTimer(10)">10</v-btn>
+        <v-btn class="blue darken-2" @click="startTimer(15)">15</v-btn>
+        <v-btn class="blue darken-2" @click="startTimer(25)">25</v-btn>
       </v-col>
       <v-col class="col-4 text-right">
         <slot></slot>
@@ -16,8 +16,8 @@
       <p id="timer">{{ timer }}</p>
     </v-container>
     <v-col>
-      <v-btn @click="stopTimer">Stop</v-btn>
-      <v-btn @click="clearTimer">Reset</v-btn>
+      <v-btn class="red accent-4" @click="stopTimer">Stop</v-btn>
+      <v-btn class="blue darken-2" @click="clearTimer">Reset</v-btn>
     </v-col>
   </v-container>
 </template>
@@ -52,6 +52,7 @@ export default {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         that.timer = minutes + ":" + seconds;
+        document.title = that.timer;
 
         if (diff <= 0) {
           that.clearTimer();

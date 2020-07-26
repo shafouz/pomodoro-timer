@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <timer-stuff v-show="true">
-      <v-btn id="show-modal" @click="showModal = true">Settings</v-btn>
+      <v-btn class="blue darken-2" id="show-modal" @click="showModal = true">Settings</v-btn>
     </timer-stuff> 
     <youtube-stuff v-show="false" slot="body" />
     <modal-template v-if="showModal" @close="showModal = false">
@@ -23,7 +23,7 @@
         v-model="songName"
         slot="body"
       ></v-text-field>
-      <v-btn slot="body" @click="setSongFromYoutube(songName)">Set Sound</v-btn>
+      <v-btn slot="body" class="blue darken-2" @click="setSongFromYoutube(songName)">Set Sound</v-btn>
     </modal-template>
   </v-container>
 </template>
